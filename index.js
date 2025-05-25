@@ -100,27 +100,68 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+let enBuyuk = ""
+let enKucuk = ""
+for (let i = 1; i < sayilar.length; i++) {
+  if (sayilar[i] > enbuyuk) {
+    enbuyuk = sayilar[i];
+  }
+  if (sayilar[i] < enkucuk) {
+    enkucuk = sayilar[i];
+  }
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+let ucetambolunenler = [];
+
+sayilar.forEach((sayi) => {
+  if (sayi % 3 === 0) {
+    ucetambolunenler.push(sayi);
+  }
+});
 
 // 3c çözümü:
 
-/* kodlar buraya */
+let ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => toplam + sayi, 0);
+
+console.log(ucebolunenlerintoplami);
 
 // 3d çözümü
 
-/* kodlar buraya */
+const besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500);
+
 
 // 3e çözümü
 
-/* kodlar buraya */
+let siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
+
 
 // 3f çözümü
 
-/* kodlar buraya */
+const tekraredensayilar = [];
+const sayilarTekrar = []; 
+
+sayilar.forEach((sayi) => {
+let bulundu = false;
+  for (let i = 0; i < sayilarTekrar.length; i++) {
+    if (sayilarTekrar[i][0] === sayi) {
+      sayilarTekrar[i][1]++; 
+      bulundu = true;
+      break;
+    }
+  }
+if (!bulundu) {
+    sayilarTekrar.push([sayi, 1]);
+  }
+});
+for (let i = 0; i < sayilarTekrar.length; i++) {
+  const [sayi, tekrarSayisi] = sayilarTekrar[i];
+  if (tekrarSayisi > 1) {
+    tekraredensayilar.push(`${sayi} sayısı ${tekrarSayisi} kere tekrar edilmiştir`);
+  }
+}
+console.log(tekraredensayilar);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
